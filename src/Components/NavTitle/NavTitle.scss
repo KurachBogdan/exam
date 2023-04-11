@@ -1,0 +1,26 @@
+.main_title {
+    display: flex;
+    justify-content: center;
+    padding: 77px 0px;
+    cursor: context-menu;
+}
+
+.btn_container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 98px;
+}
+
+a:-webkit-any-link {
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: none;
+    text-decoration: none;
+    &:hover {
+        color: #1976d2;
+    }
+    &.menu-item-active {
+        color: #1976d2;
+    }
+}
