@@ -1,10 +1,8 @@
 import { Button } from '@mui/material'
 import './FirstTask.scss'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-type Props = {}
-
-const FirstTask = (props: Props) => {
+const FirstTask = () => {
     const counterButtonsArray = [
         {
             id: 1,
@@ -22,8 +20,8 @@ const FirstTask = (props: Props) => {
 
     const [counter, setCounter] = useState(counterButtonsArray)
     const increment = (id: number) => {
-        const newCounter = counter.map((index) =>
-            index.id === id ? { ...index, value: index.value + 1 } : index
+        const newCounter = counter.map((e) =>
+            e.id === id ? { ...e, value: e.value + 1 } : e
         )
         setCounter(newCounter)
     }
@@ -31,14 +29,14 @@ const FirstTask = (props: Props) => {
     return (
         <div className="first_task_container">
             <div className="first_task">
-                {counter.map((index) => (
+                {counter.map((e) => (
                     <Button
                         variant="contained"
                         onClick={() => {
-                            increment(index.id)
+                            increment(e.id)
                         }}
                     >
-                        Change Count ({index.value})
+                        Change Count ({e.value})
                     </Button>
                 ))}
             </div>

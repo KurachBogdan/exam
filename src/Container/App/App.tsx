@@ -4,8 +4,6 @@ import FirstTask from 'Pages/FirstTask/FirstTask'
 import SecondTask from 'Pages/SecondTask/SecondTask'
 import { Routes, Route } from 'react-router-dom'
 
-type Props = {}
-
 const links = [
     {
         path: '/FirstTask',
@@ -19,7 +17,7 @@ const links = [
     },
 ]
 
-const App = (props: Props) => {
+const App = () => {
     return (
         <>
             <StyledEngineProvider>

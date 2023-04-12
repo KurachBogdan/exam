@@ -2,9 +2,7 @@ import { Button, Typography } from '@mui/material'
 import './NavTitle.scss'
 import { NavLink } from 'react-router-dom'
 
-type Props = {}
-
-const NavTitle = (props: Props) => {
+const NavTitle = () => {
     return (
         <>
             <Typography
