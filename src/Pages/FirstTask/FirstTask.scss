@@ -1,4 +1,10 @@
-.first_task {
+.first_task_container {
     display: flex;
     justify-content: center;
+}
+
+.first_task {
+    display: flex;
+    justify-content: space-between;
+    width: 553px;
 }

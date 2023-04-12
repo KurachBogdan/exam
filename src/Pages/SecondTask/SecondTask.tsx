@@ -32,11 +32,13 @@ const cardArray: Card[] = [
 
 const SecondTask = () => {
     return (
-        <>
-            <div className="buttons">
-                <Button variant="outlined">Usd</Button>
-                <Button variant="outlined">Eur</Button>
-                <Button variant="outlined">Uah</Button>
+        <div>
+            <div className='buttons_container'>
+                <div className="buttons">
+                    <Button variant="contained">Usd</Button>
+                    <Button variant="contained">Eur</Button>
+                    <Button variant="contained">Uah</Button>
+                </div>
             </div>
             <div>
                 <Grid container className="card_container" spacing={4}>
@@ -47,8 +49,8 @@ const SecondTask = () => {
                     ))}
                 </Grid>
             </div>
-            <div className='total'>Total: 0 $</div>
-        </>
+            <div className="total">Total: 0 $</div>
+        </div>
     )
 }
 

@@ -1,6 +1,12 @@
-.buttons {
+.buttons_container {
     display: flex;
     justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 203px;
 }
 
 .card_container {

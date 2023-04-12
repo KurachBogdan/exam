@@ -14,18 +14,31 @@ type Props = {
 const CardItem = ({ item, type, price }: Props) => {
     return (
         <>
-            <Card variant="outlined" className="card" sx={{width: '240px'}}>
+            <Card variant="outlined" className="card" sx={{ width: '240px' }}>
                 <CardContent>
-                    <Typography sx={{textAlign: 'center'}} variant="h5" component="div">
+                    <Typography
+                        sx={{ textAlign: 'center' }}
+                        variant="h5"
+                        component="div"
+                    >
                         {item}
                     </Typography>
-                    <Typography sx={{textAlign: 'center', mb: 2}} color="text.secondary">
+                    <Typography
+                        sx={{ textAlign: 'center', mb: 2 }}
+                        color="text.secondary"
+                    >
                         {type}
                     </Typography>
-                    <Typography sx={{textAlign: 'center'}} variant="body2">{price} $</Typography>
+                    <Typography sx={{ textAlign: 'center' }} variant="body2">
+                        {price} $
+                    </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button sx={{margin: '0 auto'}} variant="contained" size="small">
+                    <Button
+                        sx={{ margin: '0 auto', color: '#1565c0' }}
+                        variant="outlined"
+                        size="small"
+                    >
                         Buy
                     </Button>
                 </CardActions>
