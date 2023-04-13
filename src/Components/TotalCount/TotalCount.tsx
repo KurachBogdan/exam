@@ -1,9 +1,11 @@
 import './TotalCount.scss'
 
-type Props = {}
+type Props = {
+    cartData: { totalPrice: number }
+}
 
-const TotalCount = (props: Props) => {
-    return <div className="total">Total: 0 $</div>
+const TotalCount = ({ cartData }: Props) => {
+    return <div className="total">Total: {cartData.totalPrice} $</div>
 }
 
 export default TotalCount

@@ -9,9 +9,11 @@ type Props = {
     item: string
     type: string
     price: number
+    cartData: { totalPrice: number }
+    addProductToTotalCount: (price: number) => void
 }
 
-const CardItem = ({ item, type, price }: Props) => {
+const CardItem = ({ item, type, price, addProductToTotalCount }: Props) => {
     return (
         <>
             <Card variant="outlined" className="card" sx={{ width: '240px' }}>
@@ -35,6 +37,7 @@ const CardItem = ({ item, type, price }: Props) => {
                 </CardContent>
                 <CardActions>
                     <Button
+                        onClick={() => addProductToTotalCount(price)}
                         sx={{ margin: '0 auto', color: '#1565c0' }}
                         variant="outlined"
                         size="small"

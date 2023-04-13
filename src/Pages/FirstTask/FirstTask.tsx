@@ -31,6 +31,7 @@ const FirstTask = () => {
             <div className="first_task">
                 {counter.map((e) => (
                     <Button
+                        key={e.id}
                         variant="contained"
                         onClick={() => {
                             increment(e.id)
