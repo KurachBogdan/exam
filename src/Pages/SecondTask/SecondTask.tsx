@@ -1,43 +1,20 @@
 import { Button, Grid } from '@mui/material'
 import './SecondTask.scss'
 import CardItem from 'Components/Card/CardItem'
-
-type Card = {
-    id: number
-    item: string
-    type: string
-    price: number
-}
-
-const cardArray: Card[] = [
-    {
-        id: 1,
-        item: 'iPhone 8',
-        type: 'This is iPhone 8',
-        price: 400,
-    },
-    {
-        id: 2,
-        item: 'iPhone X',
-        type: 'This is iPhone X',
-        price: 500,
-    },
-    {
-        id: 3,
-        item: 'iPhone 14 Pro Max',
-        type: 'This is iPhone 14 Pro Max',
-        price: 1350,
-    },
-]
+import buttonArray from 'Utils/buttonArray'
+import cardArray from 'Utils/cardArray'
+import TotalCount from 'Components/TotalCount/TotalCount'
 
 const SecondTask = () => {
     return (
         <div>
-            <div className='buttons_container'>
+            <div className="buttons_container">
                 <div className="buttons">
-                    <Button variant="contained">Usd</Button>
-                    <Button variant="contained">Eur</Button>
-                    <Button variant="contained">Uah</Button>
+                    {buttonArray.map(({ id, currency }) => (
+                        <Button key={id} variant="contained">
+                            {currency}
+                        </Button>
+                    ))}
                 </div>
             </div>
             <div>
@@ -49,7 +26,7 @@ const SecondTask = () => {
                     ))}
                 </Grid>
             </div>
-            <div className="total">Total: 0 $</div>
+            <TotalCount />
         </div>
     )
 }
