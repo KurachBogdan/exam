@@ -10,7 +10,31 @@ type CartDataProps = {
     totalPrice: number
 }
 
+type CurrencyButton = {
+    id: number
+    currency: string
+    currencySymbol: string
+    coefficient: number
+}
+
 const SecondTask = () => {
+    const [currencys, setCurrency] = useState<CurrencyButton>(currency)
+
+    const changeCurrency = (currency: CurrencyButton) => () => {
+        setCurrency(currencys)
+    }
+
+    const currencyCoefficientList: Record<CurrencyButton, number> = {
+        USD: 1,
+        UAH: 36.95,
+        EUR: 0.9,
+    }
+
+    const renderPrice = (price: number) => {
+        const rate = currencyCoefficientList[currency]
+        return (price * rate).toFixed(2)
+    }
+
     const [cartData, setCartData] = useState<CartDataProps>({
         totalPrice: 0,
     })
@@ -26,7 +50,11 @@ const SecondTask = () => {
             <div className="buttons_container">
                 <div className="buttons">
                     {buttonArray.map(({ id, currency }) => (
-                        <Button key={id} variant="contained">
+                        <Button
+                            onClick={changeCurrency}
+                            key={id}
+                            variant="contained"
+                        >
                             {currency}
                         </Button>
                     ))}
