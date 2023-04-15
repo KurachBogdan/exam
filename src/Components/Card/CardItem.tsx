@@ -9,11 +9,11 @@ type Props = {
     item: string
     type: string
     price: number
-    cartData: { totalPrice: number }
+    currencySymbol: string
     addProductToTotalCount: (price: number) => void
 }
 
-const CardItem = ({ item, type, price, addProductToTotalCount }: Props) => {
+const CardItem = ({ item, type, price, currencySymbol, addProductToTotalCount }: Props) => {
     return (
         <>
             <Card variant="outlined" className="card" sx={{ width: '240px' }}>
@@ -32,7 +32,7 @@ const CardItem = ({ item, type, price, addProductToTotalCount }: Props) => {
                         {type}
                     </Typography>
                     <Typography sx={{ textAlign: 'center' }} variant="body2">
-                        {price} $
+                        {price} {currencySymbol}
                     </Typography>
                 </CardContent>
                 <CardActions>
